@@ -1,24 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Image Load View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageLoadViewController" id="BYZ-38-t0r" customClass="ImageLoadViewController" customModule="concurrency_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gGm-f4-bSa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="757"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hfX-RB-w5a">
+                                    <size key="itemSize" width="414" height="103"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageLoadCell" id="X6t-QP-6qc" customClass="ImageLoadCell" customModule="concurrency_test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="z3F-ql-ynf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vmD-ko-pva">
+                                                    <rect key="frame" x="15" y="11" width="124.5" height="80.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="vmD-ko-pva" secondAttribute="height" multiplier="3:2" id="P4Y-Gf-5u9"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP5-Gt-0tK">
+                                                    <rect key="frame" x="338" y="36" width="61" height="31"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="LOAD"/>
+                                                    <connections>
+                                                        <action selector="loadButtonDidTap:" destination="X6t-QP-6qc" eventType="touchUpInside" id="Emb-bW-PMv"/>
+                                                    </connections>
+                                                </button>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="63H-aO-Uah">
+                                                    <rect key="frame" x="154.5" y="49.5" width="168.5" height="4"/>
+                                                </progressView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vmD-ko-pva" firstAttribute="leading" secondItem="z3F-ql-ynf" secondAttribute="leading" constant="15" id="1sF-Yr-WMH"/>
+                                                <constraint firstItem="63H-aO-Uah" firstAttribute="leading" secondItem="vmD-ko-pva" secondAttribute="trailing" constant="15" id="2pK-E3-Hjw"/>
+                                                <constraint firstItem="eP5-Gt-0tK" firstAttribute="centerY" secondItem="z3F-ql-ynf" secondAttribute="centerY" id="GZ3-PY-sPS"/>
+                                                <constraint firstItem="vmD-ko-pva" firstAttribute="top" secondItem="z3F-ql-ynf" secondAttribute="top" constant="10" id="H6E-sZ-ylu"/>
+                                                <constraint firstItem="eP5-Gt-0tK" firstAttribute="leading" secondItem="63H-aO-Uah" secondAttribute="trailing" constant="15" id="L6f-HX-oRR"/>
+                                                <constraint firstAttribute="trailing" secondItem="eP5-Gt-0tK" secondAttribute="trailing" constant="15" id="Yiq-lk-Nhs"/>
+                                                <constraint firstAttribute="bottom" secondItem="vmD-ko-pva" secondAttribute="bottom" constant="10" id="bES-aX-uUs"/>
+                                                <constraint firstItem="63H-aO-Uah" firstAttribute="centerY" secondItem="z3F-ql-ynf" secondAttribute="centerY" id="hJj-G7-ac9"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="103"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="vmD-ko-pva" id="T1u-8Q-nRL"/>
+                                            <outlet property="loadButton" destination="eP5-Gt-0tK" id="v7m-tS-Wfp"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="sLa-lC-kwI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1JI-xX-ULb"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvJ-65-twZ">
+                                <rect key="frame" x="15" y="816" width="384" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="LOAD ALL IMAGES"/>
+                                <connections>
+                                    <action selector="loadAllImagesButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8U-ws-dSe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gGm-f4-bSa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6ZI-xb-A7F"/>
+                            <constraint firstItem="RvJ-65-twZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="7gC-4X-76q"/>
+                            <constraint firstItem="gGm-f4-bSa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K5e-Qh-82M"/>
+                            <constraint firstItem="RvJ-65-twZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SO5-Oi-1ih"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gGm-f4-bSa" secondAttribute="trailing" id="aE8-Nz-dp6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RvJ-65-twZ" secondAttribute="bottom" constant="15" id="e7M-87-6op"/>
+                            <constraint firstItem="RvJ-65-twZ" firstAttribute="top" secondItem="gGm-f4-bSa" secondAttribute="bottom" constant="15" id="ota-iO-fR3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="gGm-f4-bSa" id="8gm-sE-I5s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="100.44642857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

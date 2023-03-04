@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		EFBA308229B3967300B655E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA308129B3967300B655E5 /* AppDelegate.swift */; };
 		EFBA308429B3967300B655E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA308329B3967300B655E5 /* SceneDelegate.swift */; };
-		EFBA308629B3967300B655E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA308529B3967300B655E5 /* ViewController.swift */; };
+		EFBA308629B3967300B655E5 /* ImageLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA308529B3967300B655E5 /* ImageLoadViewController.swift */; };
 		EFBA308929B3967300B655E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBA308729B3967300B655E5 /* Main.storyboard */; };
 		EFBA308B29B3967500B655E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFBA308A29B3967500B655E5 /* Assets.xcassets */; };
 		EFBA308E29B3967500B655E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBA308C29B3967500B655E5 /* LaunchScreen.storyboard */; };
 		EFBA309929B3967500B655E5 /* concurrency_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA309829B3967500B655E5 /* concurrency_testTests.swift */; };
 		EFBA30A329B3967500B655E5 /* concurrency_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30A229B3967500B655E5 /* concurrency_testUITests.swift */; };
 		EFBA30A529B3967500B655E5 /* concurrency_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30A429B3967500B655E5 /* concurrency_testUITestsLaunchTests.swift */; };
+		EFBA30B229B39BA500B655E5 /* ImageLoadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30B129B39BA500B655E5 /* ImageLoadViewModel.swift */; };
+		EFBA30B429B3AEED00B655E5 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30B329B3AEED00B655E5 /* UIImageView+loadImage.swift */; };
+		EFBA30B629B3AF0700B655E5 /* ImageLoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30B529B3AF0700B655E5 /* ImageLoadCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 		EFBA307E29B3967300B655E5 /* concurrency-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "concurrency-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBA308129B3967300B655E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFBA308329B3967300B655E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EFBA308529B3967300B655E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EFBA308529B3967300B655E5 /* ImageLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadViewController.swift; sourceTree = "<group>"; };
 		EFBA308829B3967300B655E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFBA308A29B3967500B655E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFBA308D29B3967500B655E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		EFBA309E29B3967500B655E5 /* concurrency-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "concurrency-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBA30A229B3967500B655E5 /* concurrency_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = concurrency_testUITests.swift; sourceTree = "<group>"; };
 		EFBA30A429B3967500B655E5 /* concurrency_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = concurrency_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EFBA30B129B39BA500B655E5 /* ImageLoadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadViewModel.swift; sourceTree = "<group>"; };
+		EFBA30B329B3AEED00B655E5 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
+		EFBA30B529B3AF0700B655E5 /* ImageLoadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +107,11 @@
 			children = (
 				EFBA308129B3967300B655E5 /* AppDelegate.swift */,
 				EFBA308329B3967300B655E5 /* SceneDelegate.swift */,
-				EFBA308529B3967300B655E5 /* ViewController.swift */,
 				EFBA308729B3967300B655E5 /* Main.storyboard */,
+				EFBA308529B3967300B655E5 /* ImageLoadViewController.swift */,
+				EFBA30B529B3AF0700B655E5 /* ImageLoadCell.swift */,
+				EFBA30B129B39BA500B655E5 /* ImageLoadViewModel.swift */,
+				EFBA30B729B3AFC000B655E5 /* Utils */,
 				EFBA308A29B3967500B655E5 /* Assets.xcassets */,
 				EFBA308C29B3967500B655E5 /* LaunchScreen.storyboard */,
 				EFBA308F29B3967500B655E5 /* Info.plist */,
@@ -125,6 +134,14 @@
 				EFBA30A429B3967500B655E5 /* concurrency_testUITestsLaunchTests.swift */,
 			);
 			path = "concurrency-testUITests";
+			sourceTree = "<group>";
+		};
+		EFBA30B729B3AFC000B655E5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EFBA30B329B3AEED00B655E5 /* UIImageView+loadImage.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFBA308629B3967300B655E5 /* ViewController.swift in Sources */,
+				EFBA308629B3967300B655E5 /* ImageLoadViewController.swift in Sources */,
 				EFBA308229B3967300B655E5 /* AppDelegate.swift in Sources */,
+				EFBA30B229B39BA500B655E5 /* ImageLoadViewModel.swift in Sources */,
+				EFBA30B429B3AEED00B655E5 /* UIImageView+loadImage.swift in Sources */,
 				EFBA308429B3967300B655E5 /* SceneDelegate.swift in Sources */,
+				EFBA30B629B3AF0700B655E5 /* ImageLoadCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,11 +467,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chaehui.concurrency-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -475,11 +496,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chaehui.concurrency-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
