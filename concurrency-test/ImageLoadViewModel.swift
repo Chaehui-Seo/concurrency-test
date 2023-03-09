@@ -8,14 +8,8 @@
 import UIKit
 
 class ImageLoadViewModel {
-    var urlList = ["https://picsum.photos/id/10/200/300",
-                   "https://picsum.photos/id/11/200/300",
-                   "https://picsum.photos/id/12/200/300",
-                   "https://picsum.photos/id/13/200/300",
-                   "https://picsum.photos/id/14/200/300"]
-    
     func getUrlListCount() -> Int {
-        return urlList.count
+        return ImageURL.count()
     }
     
     func loadAllImages(in collectionView: UICollectionView) {
@@ -23,7 +17,7 @@ class ImageLoadViewModel {
             guard let cell = collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as? ImageLoadCell else {
                 return
             }
-            cell.setImage(withUrl: self.urlList[i])
+            cell.setImage(withUrl: ImageURL[i])
         }
     }
 }

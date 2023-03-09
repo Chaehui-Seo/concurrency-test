@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFAA1EDE29BA34370030F6F5 /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA1EDD29BA34370030F6F5 /* ImageURL.swift */; };
+		EFAA1EE029BA34770030F6F5 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA1EDF29BA34770030F6F5 /* ResultModel.swift */; };
 		EFBA308229B3967300B655E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA308129B3967300B655E5 /* AppDelegate.swift */; };
 		EFBA308429B3967300B655E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA308329B3967300B655E5 /* SceneDelegate.swift */; };
 		EFBA308629B3967300B655E5 /* ImageLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA308529B3967300B655E5 /* ImageLoadViewController.swift */; };
@@ -17,7 +19,7 @@
 		EFBA30A329B3967500B655E5 /* concurrency_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30A229B3967500B655E5 /* concurrency_testUITests.swift */; };
 		EFBA30A529B3967500B655E5 /* concurrency_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30A429B3967500B655E5 /* concurrency_testUITestsLaunchTests.swift */; };
 		EFBA30B229B39BA500B655E5 /* ImageLoadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30B129B39BA500B655E5 /* ImageLoadViewModel.swift */; };
-		EFBA30B429B3AEED00B655E5 /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30B329B3AEED00B655E5 /* UIImageView+loadImage.swift */; };
+		EFBA30B429B3AEED00B655E5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30B329B3AEED00B655E5 /* NetworkManager.swift */; };
 		EFBA30B629B3AF0700B655E5 /* ImageLoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA30B529B3AF0700B655E5 /* ImageLoadCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EFAA1EDD29BA34370030F6F5 /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
+		EFAA1EDF29BA34770030F6F5 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		EFBA307E29B3967300B655E5 /* concurrency-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "concurrency-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBA308129B3967300B655E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFBA308329B3967300B655E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +57,7 @@
 		EFBA30A229B3967500B655E5 /* concurrency_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = concurrency_testUITests.swift; sourceTree = "<group>"; };
 		EFBA30A429B3967500B655E5 /* concurrency_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = concurrency_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EFBA30B129B39BA500B655E5 /* ImageLoadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadViewModel.swift; sourceTree = "<group>"; };
-		EFBA30B329B3AEED00B655E5 /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
+		EFBA30B329B3AEED00B655E5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EFBA30B529B3AF0700B655E5 /* ImageLoadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EFAA1EE129BA34800030F6F5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EFAA1EDF29BA34770030F6F5 /* ResultModel.swift */,
+				EFAA1EDD29BA34370030F6F5 /* ImageURL.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		EFBA307529B3967300B655E5 = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +124,8 @@
 				EFBA308529B3967300B655E5 /* ImageLoadViewController.swift */,
 				EFBA30B529B3AF0700B655E5 /* ImageLoadCell.swift */,
 				EFBA30B129B39BA500B655E5 /* ImageLoadViewModel.swift */,
-				EFBA30B729B3AFC000B655E5 /* Utils */,
+				EFAA1EE129BA34800030F6F5 /* Data */,
+				EFBA30B729B3AFC000B655E5 /* Manager */,
 				EFBA308A29B3967500B655E5 /* Assets.xcassets */,
 				EFBA308C29B3967500B655E5 /* LaunchScreen.storyboard */,
 				EFBA308F29B3967500B655E5 /* Info.plist */,
@@ -136,12 +150,12 @@
 			path = "concurrency-testUITests";
 			sourceTree = "<group>";
 		};
-		EFBA30B729B3AFC000B655E5 /* Utils */ = {
+		EFBA30B729B3AFC000B655E5 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				EFBA30B329B3AEED00B655E5 /* UIImageView+loadImage.swift */,
+				EFBA30B329B3AEED00B655E5 /* NetworkManager.swift */,
 			);
-			path = Utils;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAA1EDE29BA34370030F6F5 /* ImageURL.swift in Sources */,
 				EFBA308629B3967300B655E5 /* ImageLoadViewController.swift in Sources */,
 				EFBA308229B3967300B655E5 /* AppDelegate.swift in Sources */,
 				EFBA30B229B39BA500B655E5 /* ImageLoadViewModel.swift in Sources */,
-				EFBA30B429B3AEED00B655E5 /* UIImageView+loadImage.swift in Sources */,
+				EFAA1EE029BA34770030F6F5 /* ResultModel.swift in Sources */,
+				EFBA30B429B3AEED00B655E5 /* NetworkManager.swift in Sources */,
 				EFBA308429B3967300B655E5 /* SceneDelegate.swift in Sources */,
 				EFBA30B629B3AF0700B655E5 /* ImageLoadCell.swift in Sources */,
 			);

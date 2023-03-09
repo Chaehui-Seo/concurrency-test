@@ -33,7 +33,7 @@ extension ImageLoadViewController: UICollectionViewDataSource, UICollectionViewD
             return UICollectionViewCell()
         }
         cell.loadHandler = {
-            cell.setImage(withUrl: self.viewModel.urlList[indexPath.item])
+            cell.setImage(withUrl: ImageURL[indexPath.item])
         }
         return cell
     }

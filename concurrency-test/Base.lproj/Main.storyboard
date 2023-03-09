@@ -68,6 +68,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="vmD-ko-pva" id="T1u-8Q-nRL"/>
                                             <outlet property="loadButton" destination="eP5-Gt-0tK" id="v7m-tS-Wfp"/>
+                                            <outlet property="progressView" destination="63H-aO-Uah" id="p68-ls-dVa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
