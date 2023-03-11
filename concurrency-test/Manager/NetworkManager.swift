@@ -12,24 +12,25 @@ class NetworkManager {
     
     func downloadImage(url: URL,
                        task: inout URLSessionDataTask?,
-                       completion: @escaping (ResultModel<UIImage>)->Void) {
+                       successHandler: @escaping ((UIImage)->Void),
+                       failHandler: @escaping (()->Void),
+                       cancelHandler: @escaping (()->Void)) {
         let request = URLRequest(url: url)
         task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 guard error.localizedDescription == "cancelled" else {
                     fatalError(error.localizedDescription)
                 }
-                completion(ResultModel(isSuccess: false, image: nil))
+                cancelHandler()
                 return
             }
             
             guard let data = data, let image = UIImage(data: data) else {
-                completion(ResultModel(isSuccess: false, image: nil))
+                failHandler()
                 return
             }
-            completion(ResultModel(isSuccess: true, image: image))
+            successHandler(image)
         }
-        
         task?.resume()
     }
 }
