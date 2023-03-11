@@ -39,24 +39,25 @@ class ImageLoadCell: UICollectionViewCell {
         
         workItem = DispatchWorkItem {
             NetworkManager.shared.downloadImage(url: url, task: &self.task) { image in
-                // 로드 완료 후, 작업 취소 여부 확인 진행하고, UI 표시
+                // CASE #1) 이미지 로드 성공
+                // 작업 취소 여부 확인 진행하고, UI 표시
                 guard self.workItem.isCancelled == false else {
                     self.reset()
                     return
                 }
-                
                 DispatchQueue.main.async {
                     self.imageView.image = image
                     self.loadButton.isSelected = false
                 }
             } failHandler: {
+                // CASE #2) 이미지 로드 실패
                 DispatchQueue.main.async {
                     self.imageView.image = UIImage(systemName: "xmark")
                 }
             } cancelHandler: {
+                // CASE #13) 이미지 로드 작업 취소
                 self.reset()
             }
-            
             // 진행도 옵저빙하여서 progress 표시
             self.observation = self.task?.progress.observe(\.fractionCompleted,
                                                  options: [.new],
