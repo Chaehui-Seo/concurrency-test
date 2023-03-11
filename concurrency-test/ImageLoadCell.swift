@@ -62,6 +62,8 @@ class ImageLoadCell: UICollectionViewCell {
                                                  options: [.new],
                                                  changeHandler: { progress, change in
                 guard self.workItem.isCancelled == false else {
+                    self.observation.invalidate()
+                    self.observation = nil
                     self.reset()
                     return
                 }
